@@ -1,0 +1,28 @@
+{
+  "name": "Cafe",
+  "tagline": "made with love",
+  "navLinks": [
+    { "label": "Home", "href": "/" },
+    { "label": "About", "href": "/about" },
+    { "label": "Menu", "href": "/menu" },
+    { "label": "Gallery", "href": "/gallery" },
+    { "label": "Blog", "href": "/blog" },
+    { "label": "Contact", "href": "/contact" }
+  ],
+  "hero": {
+    "label": "Welcome to our cafe",
+    "title": "Coffee made with care",
+    "text": "Fresh roasted beans, homemade pastries and a warm place to sit down and relax.",
+    "image": "/images/hero.jpeg",
+    "imageAlt": "Barista pouring coffee in a cafe"
+  },
+  "contact": {
+    "address": "Boudha, Kathmandu, Nepal",
+    "phone": "+977 9811111111",
+    "email": "stuti@cafe.com"
+  },
+  "hours": [
+    { "days": "Sunday - Friday", "time": "7:00 AM - 8:00 PM" },
+    { "days": "Saturday", "time": "8:00 AM - 9:00 PM" }
+  ]
+}

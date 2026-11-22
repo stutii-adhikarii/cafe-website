@@ -1,0 +1,40 @@
+{
+  "posts": [
+    {
+      "slug": "how-we-choose-our-coffee-beans",
+      "title": "How We Choose Our Coffee Beans",
+      "date": "November 10, 2026",
+      "excerpt": "A short look at where our beans come from and how we pick them.",
+      "image": "/images/blog-coffee.jpeg",
+      "imageAlt": "Coffee beans in a wooden scoop",
+      "content": [
+        "Every bag of beans we buy is tasted before it reaches our shelves. We look for a balanced flavor, a clean finish and a fair price for the farmer.",
+        "Most of our beans come from small farms. We roast in small batches every week, so what you drink is always fresh."
+      ]
+    },
+    {
+      "slug": "three-easy-ways-to-brew-at-home",
+      "title": "Three Easy Ways to Brew at Home",
+      "date": "November 3, 2026",
+      "excerpt": "You do not need a fancy machine to make a good cup at home.",
+      "image": "/images/blog-brew.jpeg",
+      "imageAlt": "Pour over coffee being brewed",
+      "content": [
+        "A French press, a pour over and a simple moka pot can all make great coffee. The most important thing is fresh beans and clean water.",
+        "Start with one spoon of coffee for every cup of water, then adjust until it tastes right for you."
+      ]
+    },
+    {
+      "slug": "weekend-music-and-coffee-nights",
+      "title": "Weekend Music and Coffee Nights",
+      "date": "October 27, 2026",
+      "excerpt": "Join us on Saturday evenings for live music and fresh desserts.",
+      "image": "/images/blog-events.jpeg",
+      "imageAlt": "Guitarist playing in a cafe",
+      "content": [
+        "Every Saturday evening, local musicians play in our cafe. It is a relaxed night with good coffee and good company.",
+        "Seats fill up quickly, so we suggest reserving a table in advance."
+      ]
+    }
+  ]
+}

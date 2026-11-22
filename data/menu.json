@@ -1,0 +1,87 @@
+{
+  "title": "Our Menu",
+  "intro": "Fresh coffee, warm tea and homemade food, made every day. Come in and order at the counter.",
+  "categories": ["Coffee", "Tea", "Food", "Desserts"],
+  "items": [
+    {
+      "id": 1,
+      "name": "Cappuccino",
+      "category": "Coffee",
+      "price": 250,
+      "description": "Rich espresso with steamed milk and a thick layer of foam.",
+      "image": "/images/cappuccino.jpeg",
+      "imageAlt": "Cappuccino in a white cup",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "name": "Iced Latte",
+      "category": "Coffee",
+      "price": 300,
+      "description": "Cold milk and espresso over ice, smooth and refreshing.",
+      "image": "/images/iced-latte.jpeg",
+      "imageAlt": "Iced latte in a tall glass",
+      "featured": false
+    },
+    {
+      "id": 3,
+      "name": "Masala Tea",
+      "category": "Tea",
+      "price": 150,
+      "description": "Black tea brewed with ginger, cardamom and warm spices.",
+      "image": "/images/masala-tea.jpeg",
+      "imageAlt": "Masala tea in a glass cup",
+      "featured": true
+    },
+    {
+      "id": 4,
+      "name": "Green Tea",
+      "category": "Tea",
+      "price": 120,
+      "description": "Light and fresh green tea, served hot with honey on request.",
+      "image": "/images/green-tea.jpeg",
+      "imageAlt": "Green tea in a clear teapot",
+      "featured": false
+    },
+    {
+      "id": 5,
+      "name": "Veg Momo",
+      "category": "Food",
+      "price": 220,
+      "description": "Steamed dumplings filled with vegetables, served with spicy chutney.",
+      "image": "/images/veg-momo.jpeg",
+      "imageAlt": "Plate of steamed vegetable momo",
+      "featured": false
+    },
+    {
+      "id": 6,
+      "name": "Club Sandwich",
+      "category": "Food",
+      "price": 350,
+      "description": "Toasted bread layered with chicken, egg, tomato and fresh lettuce.",
+      "image": "/images/club-sandwich.jpeg",
+      "imageAlt": "Club sandwich cut in half with fries",
+      "featured": true
+    },
+    {
+      "id": 7,
+      "name": "Chocolate Brownie",
+      "category": "Desserts",
+      "price": 200,
+      "description": "Warm, fudgy brownie baked fresh every morning.",
+      "image": "/images/brownie.jpeg",
+      "imageAlt": "Chocolate brownie on a plate",
+      "featured": true
+    },
+    {
+      "id": 8,
+      "name": "Cheesecake",
+      "category": "Desserts",
+      "price": 280,
+      "description": "Creamy baked cheesecake with a crisp biscuit base.",
+      "image": "/images/cheesecake.jpeg",
+      "imageAlt": "Slice of cheesecake with berries",
+      "featured": false
+    }
+  ]
+}

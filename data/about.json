@@ -32,19 +32,19 @@
       "name": "Choi Soobin",
       "role": "Head Barista",
       "image": "/images/team-1.jpeg",
-      "imageAlt": "Barista pouring milk into a cup of coffee"
+      "imageAlt": "Head Barista's picture"
     },
     {
       "name": "Choi Yeonjun",
       "role": "Pastry Chef",
       "image": "/images/team-2.jpeg",
-      "imageAlt": "Chef decorating a cake in the kitchen"
+      "imageAlt": "Pastry chef's picture"
     },
     {
       "name": "Choi Beomgyu",
       "role": "Cafe Manager",
       "image": "/images/team-3.jpeg",
-      "imageAlt": "Cafe manager smiling behind the counter"
+      "imageAlt": "Cafe Manager's picture"
     }
   ],
   "ctaTitle": "Come Say Hello",

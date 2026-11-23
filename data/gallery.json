@@ -1,0 +1,60 @@
+{
+  "title": "Gallery",
+  "intro": "A peek inside our cafe: the coffee, the food and the people.",
+  "images": [
+    {
+      "id": 1,
+      "src": "/images/gallery-1.jpeg",
+      "alt": "Warm cafe interior with wooden tables",
+      "large": true
+    },
+    {
+      "id": 2,
+      "src": "/images/gallery-2.jpeg",
+      "alt": "Latte art in a white cup",
+      "large": false
+    },
+    {
+      "id": 3,
+      "src": "/images/gallery-3.jpeg",
+      "alt": "Fresh croissants on a tray",
+      "large": false
+    },
+    {
+      "id": 4,
+      "src": "/images/gallery-4.jpeg",
+      "alt": "Coffee beans in a roaster",
+      "large": false
+    },
+    {
+      "id": 5,
+      "src": "/images/gallery-5.jpeg",
+      "alt": "Barista making espresso",
+      "large": false
+    },
+    {
+      "id": 6,
+      "src": "/images/gallery-6.jpeg",
+      "alt": "Friends talking at a cafe table",
+      "large": false
+    },
+    {
+      "id": 7,
+      "src": "/images/gallery-7.jpeg",
+      "alt": "Slice of cake with berries",
+      "large": false
+    },
+    {
+      "id": 8,
+      "src": "/images/gallery-8.jpeg",
+      "alt": "Cafe shelf with coffee jars and plants",
+      "large": false
+    },
+    {
+      "id": 9,
+      "src": "/images/gallery-9.jpeg",
+      "alt": "Cup of tea on a window seat",
+      "large": false
+    }
+  ]
+}

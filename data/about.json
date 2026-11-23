@@ -1,0 +1,52 @@
+{
+  "title": "About Us",
+  "intro": "A small cafe with a simple idea: good coffee, honest food and a warm place to sit.",
+  "story": {
+    "label": "Our Story",
+    "title": "How It All Started",
+    "paragraphs": [
+      "We opened our doors with one coffee machine, four tables and a love for good conversation. Friends, students and neighbours kept coming back, and soon the cafe became a part of the neighbourhood.",
+      "Today we roast our beans every week and bake fresh every morning. Our menu is small on purpose, so we can make every cup and every plate with care."
+    ],
+    "image": "/images/about.jpeg",
+    "imageAlt": "Cafe interior with wooden tables and warm lights"
+  },
+  "valuesTitle": "What We Believe In",
+  "values": [
+    {
+      "title": "Fresh Every Day",
+      "text": "We roast in small batches and bake every morning, so nothing sits around."
+    },
+    {
+      "title": "Fair to Farmers",
+      "text": "We buy from small farms and pay a fair price for their work."
+    },
+    {
+      "title": "A Place for Everyone",
+      "text": "Come to work, study, meet friends or just sit quietly. You are always welcome."
+    }
+  ],
+  "teamTitle": "Meet the Team",
+  "team": [
+    {
+      "name": "Choi Soobin",
+      "role": "Head Barista",
+      "image": "/images/team-1.jpeg",
+      "imageAlt": "Barista pouring milk into a cup of coffee"
+    },
+    {
+      "name": "Choi Yeonjun",
+      "role": "Pastry Chef",
+      "image": "/images/team-2.jpeg",
+      "imageAlt": "Chef decorating a cake in the kitchen"
+    },
+    {
+      "name": "Choi Beomgyu",
+      "role": "Cafe Manager",
+      "image": "/images/team-3.jpeg",
+      "imageAlt": "Cafe manager smiling behind the counter"
+    }
+  ],
+  "ctaTitle": "Come Say Hello",
+  "ctaText": "We would love to meet you. Visit us today or reserve a table for later."
+}

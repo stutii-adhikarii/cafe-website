@@ -17,7 +17,7 @@ export default function MenuPage() {
           <h1 className="font-heading text-6xl md:text-8xl uppercase mb-4">
             {menu.title}
           </h1>
-          <p className="max-w-2xl mx-auto text-gray-700">{menu.intro}</p>
+          <p className="max-w-2xl mx-auto text-ink">{menu.intro}</p>
         </div>
       </section>
 
@@ -29,11 +29,10 @@ export default function MenuPage() {
       {/* link to reservation */}
       <section className="bg-sand border-t border-dark text-center">
         <div className="max-w-3xl mx-auto px-4 md:px-8 py-12">
-          <p className="mb-4">Coming with a group? Reserve a table before you visit.</p>
-          <Link
-            href="/reservation"
-            className="inline-block bg-primary text-white px-6 py-3 uppercase text-sm tracking-wider font-semibold hover:bg-dark"
-          >
+          <p className="mb-4">
+            Coming with a group? Reserve a table before you visit.
+          </p>
+          <Link href="/reservation" className="inline-block btn">
             Reserve a Table
           </Link>
         </div>

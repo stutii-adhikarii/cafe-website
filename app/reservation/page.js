@@ -18,7 +18,7 @@ export default function ReservationPage() {
           <h1 className="font-heading text-6xl md:text-8xl uppercase mb-4">
             {page.title}
           </h1>
-          <p className="max-w-2xl mx-auto text-gray-700">{page.intro}</p>
+          <p className="max-w-2xl mx-auto text-ink">{page.intro}</p>
         </div>
       </section>
 
@@ -37,22 +37,22 @@ export default function ReservationPage() {
             {page.sideTitle}
           </h2>
 
-          <ul className="space-y-3 text-gray-700 mb-6">
+          <ul className="space-y-3 text-ink mb-6">
             {page.sideNotes.map((note) => (
               <li key={note}>{note}</li>
             ))}
           </ul>
 
-          <h3 className="text-primary uppercase tracking-widest text-sm mb-2">
+          <h3 className="text-accent uppercase tracking-widest text-sm mb-2">
             Opening Hours
           </h3>
           {site.hours.map((item) => (
-            <p key={item.days} className="text-gray-700">
+            <p key={item.days} className="text-ink">
               {item.days}: {item.time}
             </p>
           ))}
 
-          <p className="mt-6 text-gray-700">
+          <p className="mt-6 text-ink">
             Questions? Call us on{" "}
             <a
               href={`tel:${site.contact.phone.replace(/\s/g, "")}`}

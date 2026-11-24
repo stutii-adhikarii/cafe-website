@@ -1,27 +1,62 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
+import useEscape from "@/hooks/useEscape";
 
 export default function MenuCard({ item }) {
+  // open = is the white details layer showing?
+  const [open, setOpen] = useState(false);
+  useEscape(open, () => setOpen(false));
+
   return (
-    <div className="bg-white border border-dark/10">
-      <div className="relative h-56">
+    <article className="card group">
+      {/* photo: not clickable any more */}
+      <div className="relative h-72 w-full overflow-hidden border-b-[1.5px] border-ink">
         <Image
           src={item.image}
           alt={item.imageAlt}
           fill
           sizes="(max-width: 768px) 100vw, 25vw"
-          className="object-cover"
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
+
+        {/* price badge */}
+        <div className="absolute left-0 top-0 bg-linear-to-b from-black/60 to-transparent pb-8 pl-5 pr-10 pt-4 text-white">
+          <span className="block text-xs uppercase tracking-widest">Rs.</span>
+          <span className="block font-heading text-4xl leading-none">{item.price}</span>
+        </div>
+
+        {/* white see-through layer, shown by the button below */}
+        <div
+          id={`details-${item.id}`}
+          aria-hidden={!open}
+          className={`absolute inset-0 flex flex-col justify-center bg-white/85 p-6 backdrop-blur-sm transition-opacity duration-300 ${
+            open ? "opacity-100" : "opacity-0 pointer-events-none"
+          }`}
+        >
+          <h3 className="font-heading text-3xl uppercase text-accent mb-2">
+            {item.name}
+          </h3>
+          <p className="text-sm leading-relaxed text-ink">{item.description}</p>
+        </div>
       </div>
 
       <div className="p-5">
-        <div className="flex justify-between items-start gap-3 mb-2">
-          <h3 className="font-heading text-2xl uppercase">{item.name}</h3>
-          <span className="text-primary font-semibold whitespace-nowrap">
-            Rs. {item.price}
-          </span>
-        </div>
-        <p className="text-sm text-gray-600">{item.description}</p>
+        <h3 className="font-heading text-3xl uppercase text-primary">{item.name}</h3>
+        <p className="mb-4 text-sm text-primary/70">{item.category}</p>
+
+        {/* the button that shows and hides the details */}
+        <button
+            type="button"
+            onClick={() => setOpen(!open)}
+            aria-expanded={open}
+            aria-controls={`details-${item.id}`}
+            className="rounded-full border border-accent bg-white px-4 py-1.5 text-xs font-extrabold uppercase tracking-wider text-accent transition-colors duration-200 hover:bg-accent hover:text-white"
+          >
+            {open ? "Close" : "View Details"}
+        </button>
       </div>
-    </div>
+    </article>
   );
 }

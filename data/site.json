@@ -10,7 +10,6 @@
     { "label": "Contact", "href": "/contact" }
   ],
   "hero": {
-    "label": "Welcome to our cafe",
     "title": "Coffee made with care",
     "text": "Fresh roasted beans, homemade pastries and a warm place to sit down and relax.",
     "image": "/images/hero.jpeg",

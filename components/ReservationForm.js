@@ -32,7 +32,7 @@ export default function ReservationForm() {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-    // only allow numbers in the phone field
+  // only allow numbers in the phone field
   function handlePhoneChange(e) {
     const onlyNumbers = e.target.value.replace(/[^0-9]/g, "");
     setForm({ ...form, phone: onlyNumbers });
@@ -56,17 +56,15 @@ export default function ReservationForm() {
         <h3 className="font-heading text-4xl uppercase text-primary mb-3">
           {page.successTitle}
         </h3>
-        <p className="text-gray-700 mb-2">
+        <p className="text-ink mb-2">
           Thank you, {form.name}. You asked for a table for {form.guests}{" "}
-          {form.guests === "1" ? "person" : "people"} on {form.date} at {form.time}.
+          {form.guests === "1" ? "person" : "people"} on {form.date} at{" "}
+          {form.time}.
         </p>
-        <p className="text-gray-700 mb-6">
+        <p className="text-ink mb-6">
           {page.successText} We will use {form.phone}.
         </p>
-        <button
-          onClick={handleReset}
-          className="border border-dark px-6 py-3 uppercase text-sm tracking-wider font-semibold hover:bg-dark hover:text-white"
-        >
+        <button onClick={handleReset} className="btn-outline">
           Make Another Booking
         </button>
       </div>
@@ -76,7 +74,10 @@ export default function ReservationForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
       <div>
-        <label htmlFor="name" className="block text-sm uppercase tracking-wider font-semibold mb-2">
+        <label
+          htmlFor="name"
+          className="block text-sm uppercase tracking-wider font-semibold mb-2"
+        >
           Full Name
         </label>
         <input
@@ -92,7 +93,10 @@ export default function ReservationForm() {
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label htmlFor="phone" className="block text-sm uppercase tracking-wider font-semibold mb-2">
+          <label
+            htmlFor="phone"
+            className="block text-sm uppercase tracking-wider font-semibold mb-2"
+          >
             Phone
           </label>
           <input
@@ -108,11 +112,14 @@ export default function ReservationForm() {
             onChange={handlePhoneChange}
             required
             className={inputClass}
-            />
+          />
         </div>
 
         <div>
-          <label htmlFor="email" className="block text-sm uppercase tracking-wider font-semibold mb-2">
+          <label
+            htmlFor="email"
+            className="block text-sm uppercase tracking-wider font-semibold mb-2"
+          >
             Email (optional)
           </label>
           <input
@@ -128,7 +135,10 @@ export default function ReservationForm() {
 
       <div className="grid gap-5 sm:grid-cols-3">
         <div>
-          <label htmlFor="date" className="block text-sm uppercase tracking-wider font-semibold mb-2">
+          <label
+            htmlFor="date"
+            className="block text-sm uppercase tracking-wider font-semibold mb-2"
+          >
             Date
           </label>
           <input
@@ -144,7 +154,10 @@ export default function ReservationForm() {
         </div>
 
         <div>
-          <label htmlFor="time" className="block text-sm uppercase tracking-wider font-semibold mb-2">
+          <label
+            htmlFor="time"
+            className="block text-sm uppercase tracking-wider font-semibold mb-2"
+          >
             Time
           </label>
           <select
@@ -165,7 +178,10 @@ export default function ReservationForm() {
         </div>
 
         <div>
-          <label htmlFor="guests" className="block text-sm uppercase tracking-wider font-semibold mb-2">
+          <label
+            htmlFor="guests"
+            className="block text-sm uppercase tracking-wider font-semibold mb-2"
+          >
             Guests
           </label>
           <select
@@ -185,7 +201,10 @@ export default function ReservationForm() {
       </div>
 
       <div>
-        <label htmlFor="notes" className="block text-sm uppercase tracking-wider font-semibold mb-2">
+        <label
+          htmlFor="notes"
+          className="block text-sm uppercase tracking-wider font-semibold mb-2"
+        >
           Special Requests (optional)
         </label>
         <textarea
@@ -198,10 +217,7 @@ export default function ReservationForm() {
         ></textarea>
       </div>
 
-      <button
-        type="submit"
-        className="bg-primary text-white px-6 py-3 uppercase text-sm tracking-wider font-semibold hover:bg-dark"
-      >
+      <button type="submit" className="btn">
         Book Table
       </button>
     </form>

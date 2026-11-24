@@ -1,7 +1,9 @@
-import { Bebas_Neue, Inter } from "next/font/google";
+import { Bebas_Neue, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BackToTop from "@/components/BackToTop";
+import ScrollAnimator from "@/components/ScrollAnimator";
 
 // load the fonts
 const bebas = Bebas_Neue({
@@ -9,9 +11,10 @@ const bebas = Bebas_Neue({
   weight: "400",
   variable: "--font-bebas",
 });
-const inter = Inter({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["400", "500", "800"],
+  variable: "--font-dm",
 });
 
 export const metadata = {
@@ -26,10 +29,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${bebas.variable} ${inter.variable} font-body bg-cream text-dark`}>
+      <body className={`${bebas.variable} ${dmSans.variable} font-body bg-cream text-ink`}>
         <Navbar />
         {children}
         <Footer />
+        <BackToTop />
+        <ScrollAnimator />
       </body>
     </html>
   );

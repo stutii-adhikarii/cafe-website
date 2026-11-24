@@ -12,7 +12,7 @@ export default function ContactPage() {
 
   // turns the address into a link for the map
   const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(
-    site.contact.address
+    site.contact.address,
   )}&output=embed`;
 
   return (
@@ -23,7 +23,7 @@ export default function ContactPage() {
           <h1 className="font-heading text-6xl md:text-8xl uppercase mb-4">
             {page.title}
           </h1>
-          <p className="max-w-2xl mx-auto text-gray-700">{page.intro}</p>
+          <p className="max-w-2xl mx-auto text-ink">{page.intro}</p>
         </div>
       </section>
 
@@ -36,36 +36,42 @@ export default function ContactPage() {
           </h2>
 
           <div className="mb-6">
-            <h3 className="text-primary uppercase tracking-widest text-sm mb-1">Address</h3>
-            <p className="text-gray-700">{site.contact.address}</p>
+            <h3 className="text-accent uppercase tracking-widest text-sm mb-1">
+              Address
+            </h3>
+            <p className="text-ink">{site.contact.address}</p>
           </div>
 
           <div className="mb-6">
-            <h3 className="text-primary uppercase tracking-widest text-sm mb-1">Phone</h3>
+            <h3 className="text-accent uppercase tracking-widest text-sm mb-1">
+              Phone
+            </h3>
             <a
               href={`tel:${site.contact.phone.replace(/\s/g, "")}`}
-              className="text-gray-700 hover:text-primary"
+              className="text-ink hover:text-primary"
             >
               {site.contact.phone}
             </a>
           </div>
 
           <div className="mb-6">
-            <h3 className="text-primary uppercase tracking-widest text-sm mb-1">Email</h3>
+            <h3 className="text-accent uppercase tracking-widest text-sm mb-1">
+              Email
+            </h3>
             <a
               href={`mailto:${site.contact.email}`}
-              className="text-gray-700 hover:text-primary"
+              className="text-ink hover:text-primary"
             >
               {site.contact.email}
             </a>
           </div>
 
           <div>
-            <h3 className="text-primary uppercase tracking-widest text-sm mb-1">
+            <h3 className="text-accent uppercase tracking-widest text-sm mb-1">
               Opening Hours
             </h3>
             {site.hours.map((item) => (
-              <p key={item.days} className="text-gray-700">
+              <p key={item.days} className="text-ink">
                 {item.days}: {item.time}
               </p>
             ))}

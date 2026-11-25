@@ -1,0 +1,8 @@
+{
+  "siteUrl": "https://YOUR-PROJECT.vercel.app",
+  "city": "Kathmandu",
+  "country": "NP",
+  "priceRange": "Rs. 100 - Rs. 400",
+  "servesCuisine": ["Coffee", "Tea", "Bakery"],
+  "openingHours": ["Su-Fr 07:00-20:00", "Sa 08:00-21:00"]
+}

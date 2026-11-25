@@ -2,10 +2,27 @@ import Image from "next/image";
 import Link from "next/link";
 import about from "@/data/about.json";
 
+const title = "About Us";
+const description =
+  "Learn the story of our cafe, what we believe in and the people behind your coffee.";
+
 export const metadata = {
-  title: "About Us",
-  description:
-    "Learn the story of our cafe, what we believe in and the people behind your coffee.",
+  title: title,
+  description: description,
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: title + " | Cafe",
+    description: description,
+    url: "/about",
+    siteName: "Cafe",
+    type: "website",
+    images: ["/images/hero.jpeg"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: title + " | Cafe",
+    description: description,
+  },
 };
 
 export default function AboutPage() {

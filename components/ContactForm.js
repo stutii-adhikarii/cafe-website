@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import site from "@/data/site.json";
 
 const inputClass =
-  "w-full border border-dark bg-white px-4 py-3 focus:outline-none focus:border-primary";
+  "w-full border border-ink bg-white px-4 py-3 focus:outline-none focus:border-primary";
 
-export default function ContactForm() {
+// the thank you text comes from the Contact page, which reads site.json
+export default function ContactForm({ successTitle, successText }) {
   // form = what the person typed, sent = did they press the button
   const [form, setForm] = useState({
     name: "",
@@ -35,11 +35,11 @@ export default function ContactForm() {
   // thank you message after submit
   if (sent) {
     return (
-      <div className="border border-dark bg-white p-8 text-center">
-        <h3 className="font-heading text-4xl uppercase text-primary mb-3">
-          {site.contactPage.successTitle}
+      <div className="border border-ink bg-white p-8 text-center">
+        <h3 className="font-heading text-4xl uppercase text-accent mb-3">
+          {successTitle}
         </h3>
-        <p className="text-ink mb-6">{site.contactPage.successText}</p>
+        <p className="text-ink mb-6">{successText}</p>
         <button onClick={handleReset} className="btn-outline">
           Send Another Message
         </button>
@@ -50,10 +50,7 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
       <div>
-        <label
-          htmlFor="name"
-          className="block text-sm uppercase tracking-wider font-semibold mb-2"
-        >
+        <label htmlFor="name" className="block text-sm uppercase tracking-wider font-semibold mb-2">
           Your Name
         </label>
         <input
@@ -68,10 +65,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label
-          htmlFor="email"
-          className="block text-sm uppercase tracking-wider font-semibold mb-2"
-        >
+        <label htmlFor="email" className="block text-sm uppercase tracking-wider font-semibold mb-2">
           Email
         </label>
         <input
@@ -86,10 +80,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label
-          htmlFor="subject"
-          className="block text-sm uppercase tracking-wider font-semibold mb-2"
-        >
+        <label htmlFor="subject" className="block text-sm uppercase tracking-wider font-semibold mb-2">
           Subject
         </label>
         <input
@@ -104,10 +95,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label
-          htmlFor="message"
-          className="block text-sm uppercase tracking-wider font-semibold mb-2"
-        >
+        <label htmlFor="message" className="block text-sm uppercase tracking-wider font-semibold mb-2">
           Message
         </label>
         <textarea

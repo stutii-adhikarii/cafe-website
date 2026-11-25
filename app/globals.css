@@ -7,10 +7,25 @@
   --color-cream: #EFEBE4;    /* page background */
   --color-sand: #E4DED3;     /* slightly darker sections */
   --color-ink: #000000;      /* paragraph text and lines */
-  --color-dark: #000000;    
+  --color-dark: #000000;     
 
   --font-heading: var(--font-bebas);
   --font-body: var(--font-dm);
+}
+
+
+@layer base {
+  /* the page should not move sideways on phones */
+  body {
+    overflow-x: clip;
+  }
+
+  /* 16px inputs so phones do not zoom in when you tap them */
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
 }
 
 @layer components {
@@ -62,9 +77,13 @@
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-  .card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+
+  /* lift on hover, only on devices with a mouse */
+  @media (hover: hover) {
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
   }
 }
 
@@ -81,17 +100,6 @@
   background-size: 100% 2px;
 }
 
-/* sections fade up when they scroll into view */
-.reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-.reveal.is-visible {
-  opacity: 1;
-  transform: none;
-}
-
 /* fade up when the page loads */
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(24px); }
@@ -101,21 +109,13 @@
   animation: fade-up 0.8s ease both;
 }
 
-/* cards inside a ".stagger" grid appear one after another */
+/* cards inside a "stagger" grid appear one after another */
 .stagger > * {
   animation: fade-up 0.6s ease backwards;
 }
 .stagger > *:nth-child(2) { animation-delay: 0.1s; }
 .stagger > *:nth-child(3) { animation-delay: 0.2s; }
 .stagger > *:nth-child(4) { animation-delay: 0.3s; }
-.stagger > *:nth-child(5) { animation-delay: 0.4s; }
-.stagger > *:nth-child(6) { animation-delay: 0.5s; }
-.stagger > *:nth-child(7) { animation-delay: 0.6s; }
-.stagger > *:nth-child(8) { animation-delay: 0.7s; }
-/* wait until the section is on screen */
-.reveal:not(.is-visible) .stagger > * {
-  animation: none;
-}
 
 /* keyboard users can see where they are */
 :focus-visible {
@@ -128,9 +128,5 @@
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
-  }
-  .reveal {
-    opacity: 1;
-    transform: none;
   }
 }

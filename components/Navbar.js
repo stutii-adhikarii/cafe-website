@@ -31,7 +31,10 @@ export default function Navbar() {
         scrolled ? "shadow-md" : ""
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
+      <nav
+        aria-label="Main"
+        className="max-w-7xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between"
+      >
         {/* text logo */}
         <Link
           href="/"

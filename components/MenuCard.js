@@ -2,16 +2,14 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import useEscape from "@/hooks/useEscape";
 
 export default function MenuCard({ item }) {
   // open = is the white details layer showing?
   const [open, setOpen] = useState(false);
-  useEscape(open, () => setOpen(false));
 
   return (
     <article className="card group">
-      {/* photo: not clickable any more */}
+      {/* photo */}
       <div className="relative h-72 w-full overflow-hidden border-b-[1.5px] border-ink">
         <Image
           src={item.image}
@@ -27,34 +25,31 @@ export default function MenuCard({ item }) {
           <span className="block font-heading text-4xl leading-none">{item.price}</span>
         </div>
 
-        {/* white see-through layer, shown by the button below */}
+        {/* white see-through layer, the button below shows and hides it */}
         <div
-          id={`details-${item.id}`}
-          aria-hidden={!open}
           className={`absolute inset-0 flex flex-col justify-center bg-white/85 p-6 backdrop-blur-sm transition-opacity duration-300 ${
             open ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}
         >
-          <h3 className="font-heading text-3xl uppercase text-accent mb-2">
+          <p className="font-heading text-3xl uppercase text-accent mb-2">
             {item.name}
-          </h3>
+          </p>
           <p className="text-sm leading-relaxed text-ink">{item.description}</p>
         </div>
       </div>
 
       <div className="p-5">
         <h3 className="font-heading text-3xl uppercase text-primary">{item.name}</h3>
-        <p className="mb-4 text-sm text-primary/70">{item.category}</p>
+        <p className="mb-4 text-sm text-ink/70">{item.category}</p>
 
-        {/* the button that shows and hides the details */}
+        {/* small round button */}
         <button
-            type="button"
-            onClick={() => setOpen(!open)}
-            aria-expanded={open}
-            aria-controls={`details-${item.id}`}
-            className="rounded-full border border-accent bg-white px-4 py-1.5 text-xs font-extrabold uppercase tracking-wider text-accent transition-colors duration-200 hover:bg-accent hover:text-white"
-          >
-            {open ? "Close" : "View Details"}
+          type="button"
+          onClick={() => setOpen(!open)}
+          aria-expanded={open}
+          className="rounded-full border border-accent bg-white px-4 py-1.5 text-xs font-extrabold uppercase tracking-wider text-accent transition-colors duration-200 hover:bg-accent hover:text-white"
+        >
+          {open ? "Close" : "View Details"}
         </button>
       </div>
     </article>

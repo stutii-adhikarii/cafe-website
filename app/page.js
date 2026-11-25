@@ -6,10 +6,27 @@ import blog from "@/data/blog.json";
 import MenuCard from "@/components/MenuCard";
 import BlogCard from "@/components/BlogCard";
 
+const title = "Fresh Coffee and Homemade Food in Kathmandu";
+const description =
+  "Visit our cafe in Kathmandu for fresh roasted coffee, homemade pastries and a warm place to relax. See the menu or reserve a table.";
+
 export const metadata = {
-  title: "Fresh Coffee and Homemade Food in Kathmandu",
-  description:
-    "Visit our cafe for fresh roasted coffee, homemade pastries and a warm place to relax.",
+  title: title,
+  description: description,
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: title + " | Cafe",
+    description: description,
+    url: "/",
+    siteName: "Cafe",
+    type: "website",
+    images: ["/images/hero.jpeg"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: title + " | Cafe",
+    description: description,
+  },
 };
 
 export default function Home() {

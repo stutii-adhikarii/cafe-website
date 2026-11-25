@@ -1,4 +1,9 @@
 {
+    "title": "Our Blog",
+    "intro": "Stories about our coffee, easy brewing tips and what is happening at the cafe.",
+    "relatedTitle": "More Stories",
+    "ctaTitle": "Taste the Stories",
+    "ctaText": "Read about it, then come and try it. Reserve a table and we will have a cup ready for you.",
   "posts": [
     {
       "slug": "how-we-choose-our-coffee-beans",
@@ -6,7 +11,7 @@
       "date": "November 10, 2026",
       "excerpt": "A short look at where our beans come from and how we pick them.",
       "image": "/images/blog-coffee.jpeg",
-      "imageAlt": "Coffee beans in a wooden scoop",
+      "imageAlt": "Three cups of coffee on a wooden table",
       "content": [
         "Every bag of beans we buy is tasted before it reaches our shelves. We look for a balanced flavor, a clean finish and a fair price for the farmer.",
         "Most of our beans come from small farms. We roast in small batches every week, so what you drink is always fresh."
@@ -18,7 +23,7 @@
       "date": "November 3, 2026",
       "excerpt": "You do not need a fancy machine to make a good cup at home.",
       "image": "/images/blog-brew.jpeg",
-      "imageAlt": "Pour over coffee being brewed",
+      "imageAlt": "Busy coffee shop with barista making coffee",
       "content": [
         "A French press, a pour over and a simple moka pot can all make great coffee. The most important thing is fresh beans and clean water.",
         "Start with one spoon of coffee for every cup of water, then adjust until it tastes right for you."
@@ -30,7 +35,7 @@
       "date": "October 27, 2026",
       "excerpt": "Join us on Saturday evenings for live music and fresh desserts.",
       "image": "/images/blog-events.jpeg",
-      "imageAlt": "Guitarist playing in a cafe",
+      "imageAlt": "pour over coffee being made in a cafe",
       "content": [
         "Every Saturday evening, local musicians play in our cafe. It is a relaxed night with good coffee and good company.",
         "Seats fill up quickly, so we suggest reserving a table in advance."

@@ -14,13 +14,13 @@ export default function BlogCard({ post }) {
   return (
     <article className="card group">
       {/* photo */}
-      <div className="relative h-72 w-full overflow-hidden border-b-[1.5px] border-ink">
+      <div className="relative h-72 w-full overflow-hidden">
         <Image
           src={post.image}
           alt={post.imageAlt}
           fill
           sizes="(max-width: 768px) 100vw, 33vw"
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
         />
 
         {/* date badge */}
@@ -33,13 +33,20 @@ export default function BlogCard({ post }) {
           </span>
         </div>
 
-        {/* white see-through layer, the Preview button shows and hides it */}
+        {/* white see-through layer, it fades in slowly */}
         <div
-          className={`absolute inset-0 flex items-center bg-white/85 p-6 backdrop-blur-sm transition-opacity duration-300 ${
+          className={`absolute inset-0 flex items-center bg-white/85 p-6 backdrop-blur-sm transition-opacity duration-500 ease-in-out ${
             open ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}
         >
-          <p className="text-sm leading-relaxed text-ink">{post.excerpt}</p>
+          {/* the text slides up a little while the layer fades in */}
+          <p
+            className={`text-sm leading-relaxed text-ink transition-all duration-500 ease-out ${
+              open ? "translate-y-0 opacity-100 delay-100" : "translate-y-4 opacity-0"
+            }`}
+          >
+            {post.excerpt}
+          </p>
         </div>
       </div>
 
@@ -48,16 +55,18 @@ export default function BlogCard({ post }) {
         <p className="mb-4 text-sm text-ink/70">{post.date}</p>
 
         <div className="flex flex-wrap items-center gap-3">
-          <Link href={`/blog/${post.slug}`} className="btn-outline">
+          <Link
+            href={`/blog/${post.slug}`}
+            className="inline-block min-w-32 rounded-full border border-accent bg-white px-4 py-1.5 text-center text-xs font-extrabold uppercase tracking-wider text-accent hover:bg-accent hover:text-white"
+          >
             Read More
           </Link>
 
-          {/* small round button */}
           <button
             type="button"
             onClick={() => setOpen(!open)}
             aria-expanded={open}
-            className="rounded-full border border-accent bg-white px-4 py-1.5 text-xs font-extrabold uppercase tracking-wider text-accent transition-colors duration-200 hover:bg-accent hover:text-white"
+            className="min-w-32 rounded-full border border-accent bg-white px-4 py-1.5 text-center text-xs font-extrabold uppercase tracking-wider text-accent hover:bg-accent hover:text-white"
           >
             {open ? "Close" : "Preview"}
           </button>

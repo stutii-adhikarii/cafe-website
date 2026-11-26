@@ -27,7 +27,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-40 border-b border-ink bg-cream/95 backdrop-blur transition-shadow duration-300 ${
+      className={`sticky top-0 z-40 border-b border-ink/15 bg-cream/95 backdrop-blur transition-shadow duration-300 ${
         scrolled ? "shadow-md" : ""
       }`}
     >

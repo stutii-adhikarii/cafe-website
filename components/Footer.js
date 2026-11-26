@@ -3,7 +3,7 @@ import site from "@/data/site.json";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-ink">
+    <footer className="border-t border-ink/15">
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-10 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
         <div>
           <Link href="/" className="font-heading text-4xl text-primary uppercase">
@@ -26,7 +26,7 @@ export default function Footer() {
         </Link>
       </div>
 
-      <div className="border-t border-ink/20 px-4 py-4 text-center text-xs">
+      <div className="px-4 pb-6 text-center text-xs">
         {site.hours.map((item) => (
           <span key={item.days} className="mx-2">
             {item.days}: {item.time}

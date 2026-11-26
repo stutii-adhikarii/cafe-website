@@ -38,7 +38,7 @@ export default function Home() {
   return (
     <main>
       {/* hero section */}
-      <section className="relative h-[70vh] min-h-[480px] flex items-center justify-center text-center text-white border-b border-ink">
+      <section className="relative h-[70vh] min-h-[480px] flex items-center justify-center text-center text-white">
         <Image
           src={site.hero.image}
           alt={site.hero.imageAlt}
@@ -68,7 +68,7 @@ export default function Home() {
       </section>
 
       {/* featured menu */}
-      <section className="border-b border-ink">
+      <section>
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-20">
           <div className="text-center mb-12">
             <p className="text-accent uppercase tracking-widest text-sm mb-2">
@@ -94,9 +94,9 @@ export default function Home() {
       </section>
 
       {/* about teaser */}
-      <section className="bg-sand border-b border-ink">
+      <section className="bg-sand">
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-20 grid gap-10 md:grid-cols-2 items-center">
-          <div className="relative h-80 md:h-96 border border-ink rounded-3xl overflow-hidden">
+          <div className="relative h-80 md:h-96 rounded-3xl overflow-hidden">
             <Image
               src={site.about.image}
               alt={site.about.imageAlt}
@@ -122,7 +122,7 @@ export default function Home() {
       </section>
 
       {/* blog preview */}
-      <section className="border-b border-ink">
+      <section>
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-20">
           <div className="text-center mb-12">
             <p className="text-accent uppercase tracking-widest text-sm mb-2">
@@ -142,7 +142,7 @@ export default function Home() {
       </section>
 
       {/* call to action */}
-      <section>
+      <section className="bg-sand">
         <div className="max-w-3xl mx-auto px-4 md:px-8 py-16 md:py-20 text-center">
           <h2 className="font-heading text-5xl md:text-6xl uppercase mb-4 text-accent">
             {site.home.ctaTitle}

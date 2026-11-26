@@ -2,40 +2,86 @@
 
 import { useState } from "react";
 
-const inputClass =
-  "w-full border border-ink bg-white px-4 py-3 focus:outline-none focus:border-primary";
+const labelClass = "block text-sm uppercase tracking-wider font-semibold mb-2";
 
 // the thank you text comes from the Contact page, which reads site.json
 export default function ContactForm({ successTitle, successText }) {
-  // form = what the person typed, sent = did they press the button
+  // form = what the person typed, errors = the messages under the fields
   const [form, setForm] = useState({
     name: "",
     email: "",
     subject: "",
     message: "",
   });
+  const [errors, setErrors] = useState({});
   const [sent, setSent] = useState(false);
 
   // update one field when the person types
   function handleChange(e) {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+    // remove the error of this field while the person is typing
+    setErrors({ ...errors, [name]: "" });
+  }
+
+  // class for a field, the border turns red when it has an error
+  function fieldClass(name) {
+    const base = "w-full rounded-lg border bg-white px-4 py-3";
+    return errors[name] ? base + " border-red-600" : base + " border-ink/30";
+  }
+
+  // check every field and collect the messages
+  function validate() {
+    const newErrors = {};
+
+    if (form.name.trim() === "") {
+      newErrors.name = "Name is required";
+    } else if (form.name.trim().length < 2) {
+      newErrors.name = "Name must be at least 2 letters";
+    }
+
+    if (form.email.trim() === "") {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) {
+      newErrors.email = "Please enter a valid email address";
+    }
+
+    if (form.subject.trim() === "") {
+      newErrors.subject = "Subject is required";
+    }
+
+    if (form.message.trim() === "") {
+      newErrors.message = "Message is required";
+    } else if (form.message.trim().length < 10) {
+      newErrors.message = "Message is too short, please write at least 10 characters";
+    }
+
+    return newErrors;
   }
 
   function handleSubmit(e) {
     e.preventDefault();
+
+    const newErrors = validate();
+    setErrors(newErrors);
+
+    // stop here if there is any error
+    if (Object.keys(newErrors).length > 0) return;
+
     // there is no backend yet, so we only show the thank you message
     setSent(true);
   }
 
   function handleReset() {
     setForm({ name: "", email: "", subject: "", message: "" });
+    setErrors({});
     setSent(false);
   }
 
   // thank you message after submit
   if (sent) {
     return (
-      <div className="border border-ink bg-white p-8 text-center">
+      <div className="rounded-2xl bg-white p-8 text-center shadow-md">
         <h3 className="font-heading text-4xl uppercase text-accent mb-3">
           {successTitle}
         </h3>
@@ -48,9 +94,10 @@ export default function ContactForm({ successTitle, successText }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
+    // noValidate turns off the browser's own pop-up messages, we show ours
+    <form onSubmit={handleSubmit} noValidate className="space-y-5">
       <div>
-        <label htmlFor="name" className="block text-sm uppercase tracking-wider font-semibold mb-2">
+        <label htmlFor="name" className={labelClass}>
           Your Name
         </label>
         <input
@@ -59,13 +106,14 @@ export default function ContactForm({ successTitle, successText }) {
           type="text"
           value={form.name}
           onChange={handleChange}
-          required
-          className={inputClass}
+          aria-invalid={errors.name ? "true" : "false"}
+          className={fieldClass("name")}
         />
+        {errors.name && <p className="mt-1 text-sm text-red-700">{errors.name}</p>}
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-sm uppercase tracking-wider font-semibold mb-2">
+        <label htmlFor="email" className={labelClass}>
           Email
         </label>
         <input
@@ -74,13 +122,14 @@ export default function ContactForm({ successTitle, successText }) {
           type="email"
           value={form.email}
           onChange={handleChange}
-          required
-          className={inputClass}
+          aria-invalid={errors.email ? "true" : "false"}
+          className={fieldClass("email")}
         />
+        {errors.email && <p className="mt-1 text-sm text-red-700">{errors.email}</p>}
       </div>
 
       <div>
-        <label htmlFor="subject" className="block text-sm uppercase tracking-wider font-semibold mb-2">
+        <label htmlFor="subject" className={labelClass}>
           Subject
         </label>
         <input
@@ -89,13 +138,14 @@ export default function ContactForm({ successTitle, successText }) {
           type="text"
           value={form.subject}
           onChange={handleChange}
-          required
-          className={inputClass}
+          aria-invalid={errors.subject ? "true" : "false"}
+          className={fieldClass("subject")}
         />
+        {errors.subject && <p className="mt-1 text-sm text-red-700">{errors.subject}</p>}
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-sm uppercase tracking-wider font-semibold mb-2">
+        <label htmlFor="message" className={labelClass}>
           Message
         </label>
         <textarea
@@ -104,9 +154,10 @@ export default function ContactForm({ successTitle, successText }) {
           rows="5"
           value={form.message}
           onChange={handleChange}
-          required
-          className={inputClass}
+          aria-invalid={errors.message ? "true" : "false"}
+          className={fieldClass("message")}
         ></textarea>
+        {errors.message && <p className="mt-1 text-sm text-red-700">{errors.message}</p>}
       </div>
 
       <button type="submit" className="btn">

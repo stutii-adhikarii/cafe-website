@@ -35,7 +35,7 @@ export default function ContactPage() {
   return (
     <main>
       {/* page heading */}
-      <section className="border-b border-ink">
+      <section className="bg-sand">
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-16 text-center fade-in">
           <h1 className="font-heading text-6xl md:text-8xl uppercase mb-4">
             {page.title}
@@ -45,7 +45,7 @@ export default function ContactPage() {
       </section>
 
       {/* info and form */}
-      <section className="border-b border-ink">
+      <section>
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-20 grid gap-12 md:grid-cols-2">
           {/* left side: contact info */}
           <div>
@@ -113,7 +113,7 @@ export default function ContactPage() {
             src={mapSrc}
             title="Map showing the location of our cafe"
             loading="lazy"
-            className="w-full h-80 md:h-96 border border-ink"
+            className="w-full h-80 md:h-96 rounded-2xl"
           ></iframe>
         </div>
       </section>

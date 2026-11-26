@@ -29,7 +29,7 @@ export default function BlogPage() {
   return (
     <main>
       {/* page heading */}
-      <section className="border-b border-ink">
+      <section className="bg-sand">
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-16 text-center fade-in">
           <h1 className="font-heading text-6xl md:text-8xl uppercase mb-4">
             {blog.title}
@@ -39,7 +39,7 @@ export default function BlogPage() {
       </section>
 
       {/* post cards */}
-      <section className="border-b border-ink">
+      <section>
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-20">
           {/* hidden heading keeps the heading order correct for screen readers */}
           <h2 className="sr-only">All posts</h2>
@@ -53,7 +53,7 @@ export default function BlogPage() {
       </section>
 
       {/* call to action */}
-      <section>
+      <section className="bg-sand">
         <div className="max-w-3xl mx-auto px-4 md:px-8 py-16 md:py-20 text-center">
           <h2 className="font-heading text-5xl md:text-6xl uppercase mb-4 text-accent">
             {blog.ctaTitle}

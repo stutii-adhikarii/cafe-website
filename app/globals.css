@@ -13,7 +13,7 @@
   --font-body: var(--font-dm);
 }
 
-
+/* small fixes for phones */
 @layer base {
   /* the page should not move sideways on phones */
   body {
@@ -26,10 +26,37 @@
   textarea {
     font-size: 16px;
   }
+
+  /* the mouse turns into a hand on everything that can be clicked */
+  button:not(:disabled),
+  [role="button"],
+  select,
+  summary {
+    cursor: pointer;
+  }
+
+  /* everything changes smoothly, not suddenly */
+  a,
+  button,
+  input,
+  select,
+  textarea {
+    transition: color 0.3s ease, background-color 0.3s ease,
+      border-color 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+  }
+}
+
+/* one clean outline when a field is clicked (no double lines) */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(143, 34, 58, 0.15);
 }
 
 @layer components {
-  /* all buttons share this look */
+  /* all buttons share this look, with softly rounded corners */
   .btn,
   .btn-outline,
   .btn-white {
@@ -40,9 +67,17 @@
     text-transform: uppercase;
     letter-spacing: 0.12em;
     text-align: center;
-    border: 1.5px solid;
+    border: 1px solid;
+    border-radius: 0.5rem;
     cursor: pointer;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    transition: background-color 0.3s ease, color 0.3s ease,
+      border-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .btn:active,
+  .btn-outline:active,
+  .btn-white:active {
+    transform: scale(0.97);
   }
 
   /* orange button: turns white on hover */
@@ -69,13 +104,13 @@
     color: #fff;
   }
 
-  /* cards with a thin black outline */
+  /* cards: one thin outline, soft corners */
   .card {
-    border: 1.5px solid #000;
+    border: 1px solid #000;
     border-radius: 1.5rem;
     background: var(--color-cream);
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
   }
 
   /* lift on hover, only on devices with a mouse */
@@ -109,6 +144,15 @@
   animation: fade-up 0.8s ease both;
 }
 
+/* the whole page fades in when we go to another page */
+@keyframes page-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+.page-fade {
+  animation: page-in 0.5s ease both;
+}
+
 /* cards inside a "stagger" grid appear one after another */
 .stagger > * {
   animation: fade-up 0.6s ease backwards;
@@ -117,8 +161,9 @@
 .stagger > *:nth-child(3) { animation-delay: 0.2s; }
 .stagger > *:nth-child(4) { animation-delay: 0.3s; }
 
-/* keyboard users can see where they are */
-:focus-visible {
+/* keyboard users can see where they are (buttons and links) */
+a:focus-visible,
+button:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 3px;
 }

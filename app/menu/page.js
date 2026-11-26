@@ -29,7 +29,7 @@ export default function MenuPage() {
   return (
     <main>
       {/* page heading */}
-      <section className="border-b border-ink">
+      <section className="bg-sand">
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-16 text-center fade-in">
           <h1 className="font-heading text-6xl md:text-8xl uppercase mb-4">
             {menu.title}
@@ -39,7 +39,7 @@ export default function MenuPage() {
       </section>
 
       {/* filter and cards */}
-      <section className="border-b border-ink">
+      <section>
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-20">
           {/* hidden heading keeps the heading order correct for screen readers */}
           <h2 className="sr-only">Menu items</h2>

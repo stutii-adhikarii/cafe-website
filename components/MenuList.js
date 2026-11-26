@@ -13,8 +13,11 @@ export default function MenuList() {
   // filter by category and by what was typed in the search box
   const shownItems = menu.items.filter((item) => {
     const matchesCategory = selected === "All" || item.category === selected;
-    const text = `${item.name} ${item.description}`.toLowerCase();
-    const matchesSearch = text.includes(search.trim().toLowerCase());
+    const words = `${item.name} ${item.category}`.toLowerCase().split(" ");
+    const searchWords = search.trim().toLowerCase().split(" ");
+    const matchesSearch = searchWords.every((searchWord) =>
+      words.some((word) => word.startsWith(searchWord))
+    );
     return matchesCategory && matchesSearch;
   });
 
@@ -45,7 +48,7 @@ export default function MenuList() {
           placeholder="Search the menu..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="w-full rounded-full border border-ink bg-white px-5 py-3 focus:outline-none focus:border-accent"
+          className="w-full rounded-full border border-ink/30 bg-white px-5 py-3"
         />
       </div>
 

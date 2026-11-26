@@ -41,7 +41,7 @@ export default function GalleryGrid() {
             type="button"
             onClick={() => setCurrent(index)}
             aria-label={`Open photo: ${image.alt}`}
-            className={`group relative overflow-hidden border border-ink ${
+            className={`group relative overflow-hidden rounded-2xl ${
               image.large ? "col-span-2 row-span-2" : ""
             }`}
           >

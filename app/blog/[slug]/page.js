@@ -74,7 +74,7 @@ export default async function BlogPostPage({ params }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(postData) }}
       />
 
-      <section className="border-b border-ink">
+      <section>
         <article className="max-w-3xl mx-auto px-4 md:px-8 py-12 md:py-16">
           <Link
             href="/blog"
@@ -88,7 +88,7 @@ export default async function BlogPostPage({ params }) {
             <p className="text-sm text-accent uppercase tracking-widest">{post.date}</p>
           </header>
 
-          <div className="relative h-64 md:h-96 mb-10 rounded-3xl overflow-hidden border border-ink">
+          <div className="relative h-64 md:h-96 mb-10 rounded-3xl overflow-hidden">
             <Image
               src={post.image}
               alt={post.imageAlt}

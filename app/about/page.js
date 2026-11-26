@@ -29,7 +29,7 @@ export default function AboutPage() {
   return (
     <main>
       {/* page heading */}
-      <section className="border-b border-ink">
+      <section className="bg-sand">
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-16 text-center fade-in">
           <h1 className="font-heading text-6xl md:text-8xl uppercase mb-4">
             {about.title}
@@ -39,7 +39,7 @@ export default function AboutPage() {
       </section>
 
       {/* our story */}
-      <section className="border-b border-ink">
+      <section>
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-20 grid gap-10 md:grid-cols-2 items-center">
           <div>
             <p className="text-accent uppercase tracking-widest text-sm mb-2">
@@ -55,7 +55,7 @@ export default function AboutPage() {
             ))}
           </div>
 
-          <div className="relative h-80 md:h-[28rem] border border-ink rounded-3xl overflow-hidden">
+          <div className="relative h-80 md:h-[28rem] rounded-3xl overflow-hidden">
             <Image
               src={about.story.image}
               alt={about.story.imageAlt}
@@ -68,7 +68,7 @@ export default function AboutPage() {
       </section>
 
       {/* values */}
-      <section className="bg-sand border-b border-ink">
+      <section className="bg-sand">
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-20">
           <h2 className="font-heading text-5xl md:text-6xl uppercase text-center mb-12">
             {about.valuesTitle}
@@ -88,7 +88,7 @@ export default function AboutPage() {
       </section>
 
       {/* team */}
-      <section className="border-b border-ink">
+      <section>
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-20">
           <h2 className="font-heading text-5xl md:text-6xl uppercase text-center mb-12">
             {about.teamTitle}
@@ -97,7 +97,7 @@ export default function AboutPage() {
           <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 stagger">
             {about.team.map((person) => (
               <div key={person.name} className="card">
-                <div className="relative h-80 border-b-[1.5px] border-ink">
+                <div className="relative h-80">
                   <Image
                     src={person.image}
                     alt={person.imageAlt}
@@ -121,7 +121,7 @@ export default function AboutPage() {
       </section>
 
       {/* call to action */}
-      <section>
+      <section className="bg-sand">
         <div className="max-w-3xl mx-auto px-4 md:px-8 py-16 md:py-20 text-center">
           <h2 className="font-heading text-5xl md:text-6xl uppercase mb-4 text-accent">
             {about.ctaTitle}
